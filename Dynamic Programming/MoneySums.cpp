@@ -20,7 +20,6 @@ int main() {
     vector<int> a(n);
     for(auto &it: a)
         cin>>it;
-    sort(a);
     int maxSum = 0;
     for(auto it: a)
         maxSum += it;
