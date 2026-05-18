@@ -1,25 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define pb push_back
 #define ll long long
-ll mod = 1e9 + 7;
+#define input(a, n) for(int i = 0; i < n; i++) cin >> a[i];
+#define output(a, n) for(int i = 0; i < n; i++) cout << a[i] << " "; cout << endl;
+#define sort(a) sort(a.begin(), a.end());
+#define reverse(a) reverse(a.begin(), a.end());
 
-vector<pair<int, int>> steps;
+void f(ll a, ll b, ll c, ll n) {
+    if(n == 0) return;
 
-void solve(int disks, int from, int to, int aux) {
-    if (disks == 0)
-        return;
-    solve(disks - 1, from, aux, to);
-    steps.push_back({from, to});
-    solve(disks - 1, aux, to, from);
+    f(a, c, b, n - 1);
+    cout << a << " " << c << endl;
+    f(b, a, c, n - 1);
+}
+
+void solve() {
+    ll n;
+    cin >> n;
+    
+    ll ans = (1ll << n) - 1;
+    cout << ans << endl;
+    f(1, 2, 3, n);
+    return;
 }
 
 int main() {
-    int n;
-    cin>>n;
-    solve(n, 1, 3, 2);
-    cout<<steps.size()<<endl;
-    for(auto it: steps) {
-        cout<<it.first<<" "<<it.second<<endl;
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int t = 1;
+    // cin >> t;
+    while(t--) {
+        solve();
     }
     return 0;
 }

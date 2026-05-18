@@ -1,23 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define pb push_back
 #define ll long long
-ll mod = 1e9 + 7;
+#define input(a, n) for(int i = 0; i < n; i++) cin >> a[i];
+#define output(a, n) for(int i = 0; i < n; i++) cout << a[i] << " "; cout << endl;
+#define sort(a) sort(a.begin(), a.end());
+#define reverse(a) reverse(a.begin(), a.end());
 
-ll countNumberOfDivisor(int n, int divisor) {
-    int count = 0;
-    while(n % divisor == 0) {
-        count++;
-        n /= divisor;
-    }
-    return count;
+void solve() {
+    ll n;
+    cin >> n;
+    
+    ll ans = 0, x = 5;
+    while (x <= n) 
+        ans += n / x, x *= 5;
+
+    cout << ans << endl;
+    
+    return;
 }
 
 int main() {
-    ll n, countFive = 0;
-    cin>>n;
-    for(int i=5;i<=n;i+=5) {
-        countFive += countNumberOfDivisor(i, 5);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int t = 1;
+    // cin >> t;
+    while(t--) {
+        solve();
     }
-    cout<<countFive<<endl;
     return 0;
 }

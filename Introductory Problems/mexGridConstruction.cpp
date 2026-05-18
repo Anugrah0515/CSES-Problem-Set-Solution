@@ -10,41 +10,37 @@ using namespace std;
 #define no cout << "NO" << endl;
 #define newline cout << endl;
 
-ll power(ll a, ll b) {
-    ll res = 1;
-    while (b > 0) {
-        if (b & 1) {
-            res = (res * a);
-        }
-        a = (a * a);
-        b >>= 1;
-    }
-    return res;
-}
-
 void solve() {
-    ll k;
-    cin >> k;
+    int n;
+    cin >> n;
+    vector<vector<int>> mex(n, vector<int>(n, 0));
     
-    ll digits = 1, base = 9;
-    while(k - digits * base > 0) {
-        k -= digits * base;
-        base *= 10;
-        digits++;
+    for(int i=0;i<n;i++) {
+        for(int j=0;j<n;j++) {
+            vector<int> tmp;
+            for(int k=0;k<i;k++) tmp.pb(mex[k][j]);
+            for(int k=0;k<j;k++) tmp.pb(mex[i][k]);
+            sort(tmp);
+            int k = 0;
+            for(auto it: tmp) 
+                if (k == it) k++;
+                else break;
+            mex[i][j] = k;
+        }
     }
 
-    ll index = k % digits;
-    ll res = power(10, (digits - 1)) + (k - 1) / digits;
-    if (index != 0)
-        res = res / power(10, digits - index);
-    cout << res % 10 << endl;
+    for(auto it: mex) {
+        output(it)
+        cout << endl;
+    }
+    return;
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while(t--) {
         solve();
     }

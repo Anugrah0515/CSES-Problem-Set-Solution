@@ -1,20 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define pb push_back
 #define ll long long
-ll mod = 1e9 + 7;
+#define input(a, n) for(int i = 0; i < n; i++) cin >> a[i];
+#define output(a, n) for(int i = 0; i < n; i++) cout << a[i] << " "; cout << endl;
+#define sort(a) sort(a.begin(), a.end());
+#define reverse(a) reverse(a.begin(), a.end());
 
-ll solve(int i, ll sum1, ll sum2, vector<ll>& a, int n) {
-    if (i == n)
-        return abs(sum1 - sum2);
-    return min(solve(i+1, sum1 + a[i], sum2, a, n), solve(i+1, sum1, sum2 + a[i], a, n));
+ll f(ll i, ll a, ll b, vector<ll>& v, ll n) {
+    if (i == n) return abs(a - b);
+    return min(f(i + 1, a + v[i], b, v, n), f(i + 1, a, b + v[i], v, n));
+}
+
+void solve() {
+    ll n;
+    cin >> n;
+    vector<ll> a(n);
+    input(a, n);
+
+    cout << f(0, 0, 0, a, n) << endl;
+    return;
 }
 
 int main() {
-    int n;
-    cin>>n;
-    vector<ll> a(n);
-    for(auto &it: a)
-        cin>>it;
-    cout<<solve(0, 0, 0, a, n)<<endl;
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int t = 1;
+    // cin >> t;
+    while(t--) {
+        solve();
+    }
     return 0;
 }

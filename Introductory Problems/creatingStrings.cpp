@@ -1,38 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define pb push_back
 #define ll long long
-ll mod = 1e9 + 7;
+#define input(a, n) for(int i = 0; i < n; i++) cin >> a[i];
+#define output(a, n) for(int i = 0; i < n; i++) cout << a[i] << " "; cout << endl;
+#define sort(a) sort(a.begin(), a.end());
+#define reverse(a) reverse(a.begin(), a.end());
 
-vector<string> ans;
+set<string> ans;
 
-void solve(int ind, int n, string s, vector<int>& freq) {
-    if (ind == n) {
-        ans.push_back(s);
+void f(string s, string str, int mask, int n) {
+    if (mask == (1 << n) - 1) {
+        ans.insert(str);
         return;
     }
+    for(int i=0;i<n;i++) {
+        if (mask & (1 << i)) continue;
+        str += s[i];
+        f(s, str, mask | (1 << i), n);
+        str.pop_back();
+    }
+    return;
+}
 
-    for(int i=0;i<26;i++) {
-        if (freq[i] != 0) {
-            s.push_back('a' + i);
-            freq[i]--;
-            solve(ind+1, n, s, freq);
-            freq[i]++;
-            s.pop_back();
-        }   
+void solve() {
+    string s;
+    cin >> s;
+
+    sort(s);
+    string str = "";
+    int mask = 0;
+    f(s, str, mask, s.size());
+    cout << ans.size() << endl;
+    for (auto str: ans) {
+        cout << str << endl;
     }
     return;
 }
 
 int main() {
-    string s;
-    cin>>s;
-    vector<int> freq(26);
-    for(auto it: s) {
-        freq[it - 'a']++;
-    }   
-    solve(0, s.length(), "", freq);
-    cout<<ans.size()<<endl;
-    for(auto it: ans) 
-        cout<<it<<endl;
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int t = 1;
+    // cin >> t;
+    while(t--) {
+        solve();
+    }
     return 0;
 }

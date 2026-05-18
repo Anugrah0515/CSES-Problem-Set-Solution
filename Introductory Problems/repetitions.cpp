@@ -8,17 +8,17 @@ using namespace std;
 #define reverse(a) reverse(a.begin(), a.end());
 
 void solve() {
-    int n;
-    cin >> n;
-    vector<ll> a(n);
-    input(a, n);
+    string s;
+    cin >> s;
 
-    ll ans = 0;
-    for(int i=1;i<n;i++) {
-        if (a[i] < a[i - 1]) {
-            ans += a[i - 1] - a[i];
-            a[i] = a[i - 1];
-        }
+    int n = s.length(), ans = 0;
+    for(int i=0;i<n;i++) {
+        char ch = s[i];
+        int len = 0;
+        while(i < n && ch == s[i]) 
+            len++, i++;
+        ans = max(ans, len);
+        i--;
     }
     cout << ans << endl;
 }
