@@ -1,1 +1,0 @@
-{"name":"Local: restaurantCustomers","url":"d:\\CSES-Problem-Set-Solution\\Sorting and Searching\\restaurantCustomers.cpp","tests":[{"id":1779268164256,"input":"3\n2 4\n5 8\n6 9","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CSES-Problem-Set-Solution\\Sorting and Searching\\restaurantCustomers.cpp","group":"local","local":true}

@@ -1,1 +1,0 @@
-{"name":"Local: nestedRangeCount","url":"d:\\CSES-Problem-Set-Solution\\Sorting and Searching\\nestedRangeCount.cpp","tests":[{"id":1781348081202,"input":"4\n1 6\n2 4\n4 8\n3 6","output":"2 0 0 0\n0 1 0 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CSES-Problem-Set-Solution\\Sorting and Searching\\nestedRangeCount.cpp","group":"local","local":true}
