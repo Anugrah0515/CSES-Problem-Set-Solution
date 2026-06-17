@@ -1,0 +1,1 @@
+{"name":"Local: subarraySums1","url":"d:\\CSES-Problem-Set-Solution\\Sorting and Searching\\subarraySums1.cpp","tests":[{"id":1781609403001,"input":"5 7\n2 4 1 2 7","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CSES-Problem-Set-Solution\\Sorting and Searching\\subarraySums1.cpp","group":"local","local":true}

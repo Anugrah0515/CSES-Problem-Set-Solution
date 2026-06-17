@@ -1,0 +1,1 @@
+{"name":"Local: sumOf4Values","url":"d:\\CSES-Problem-Set-Solution\\Sorting and Searching\\sumOf4Values.cpp","tests":[{"id":1781563210077,"input":"8 15\n3 2 5 8 1 3 2 3","output":"2 4 6 7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CSES-Problem-Set-Solution\\Sorting and Searching\\sumOf4Values.cpp","group":"local","local":true}

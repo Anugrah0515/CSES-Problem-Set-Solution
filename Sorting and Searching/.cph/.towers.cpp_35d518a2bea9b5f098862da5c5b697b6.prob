@@ -1,0 +1,1 @@
+{"name":"Local: towers","url":"d:\\CSES-Problem-Set-Solution\\Sorting and Searching\\towers.cpp","tests":[{"id":1780966971721,"input":"5\n3 8 2 1 5","output":"2"},{"id":1780967083628,"input":"4\n5 5 3 4","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CSES-Problem-Set-Solution\\Sorting and Searching\\towers.cpp","group":"local","local":true}
